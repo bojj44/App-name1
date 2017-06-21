@@ -1,0 +1,10 @@
+﻿/* ------------------------------------------------------------
+/* NOTE: These styles will be applied to the iOS platform only 
+/* ------------------------------------------------------------*/
+.ios-only TextInput, .ios-only TextView { font-family: Arial; }
+
+.ios-only .module-header-title { font-size: 24px; font-weight: bold; }
+
+.ios-only Dialog, .ios-only Modal { border-radius: 15px; }
+
+.ios-only .primary-button { border-radius: 5px; }

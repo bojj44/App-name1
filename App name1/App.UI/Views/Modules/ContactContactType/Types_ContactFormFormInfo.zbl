@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="Types_ContactFormFormInfo" z-base="Stack" z-namespace="UI.Modules"
+    z-partial="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../../.zebble-schema.xml">
+
+  <FormField z-of="ItemPicker" Id="ContactType" LabelText="Contact type"
+      Control.AllowNull="true" Control.DataSource="@(Database.GetList&lt;ContactType&gt;())" />
+
+</z-Component>

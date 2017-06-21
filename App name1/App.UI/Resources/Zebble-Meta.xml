@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<data>
+  <image path="Images/Logo.png" width="192" height="156" />
+  <image path="Images/Icons/Arrow-Right.png" width="60" height="60" />
+  <image path="Images/Icons/back.png" width="30" height="56" />
+  <image path="Images/Icons/Burger.png" width="100" height="100" />
+  <image path="Images/Icons/Caret.png" width="60" height="60" />
+  <image path="Images/Icons/Check.png" width="60" height="60" />
+  <image path="Images/Icons/contacts.png" width="60" height="60" />
+  <image path="Images/Icons/Empty.png" width="1" height="1" />
+  <image path="Images/Icons/help.png" width="25" height="25" />
+  <image path="Images/Icons/loading.png" width="100" height="27" />
+  <image path="Images/Icons/Map.png" width="60" height="60" />
+  <image path="Images/Icons/not-found.png" width="255" height="256" />
+  <image path="Images/Icons/Pick-photo.png" width="25" height="25" />
+  <image path="Images/Icons/Pick-video.png" width="25" height="25" />
+  <image path="Images/Icons/Search.png" width="60" height="60" />
+  <image path="Images/Icons/Settings.png" width="60" height="60" />
+  <image path="Images/Icons/Share.png" width="60" height="60" />
+  <image path="Images/Icons/Spinner.gif" width="24" height="24" />
+  <image path="Images/Icons/Spinner.png" width="120" height="120" />
+  <image path="Images/Icons/Take-photo.png" width="25" height="25" />
+  <image path="Images/Icons/Take-video.png" width="25" height="25" />
+  <image path="Images/Icons/Types.png" width="60" height="60" />
+  <image path="Images/Icons/Video.png" width="60" height="60" />
+  <image path="Images/Icons/White-Add.png" width="60" height="60" />
+</data>

@@ -1,0 +1,169 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>cd40d45a-cffe-46fc-8a9d-055ef9ff9440</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UI</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory).zebble-generated-css.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory).zebble-generated.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\PushNotificationListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\Default.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\Blank.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\Modal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Templates\Components\MenuDisplayer.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Templates\Components\MainTabs.zbl" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\Windows.scss" />
+    <None Include="$(MSBuildThisFileDirectory)compilerconfig.json.defaults" />
+    <None Include="$(MSBuildThisFileDirectory)compilerconfig.json" />
+    <None Include="$(MSBuildThisFileDirectory)Splash.png" />
+    <None Include="$(MSBuildThisFileDirectory)Icon.png" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\_Core.scss" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\Common.scss" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\iOS.scss" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\_Settings.scss" />
+    <None Include="$(MSBuildThisFileDirectory)Styles\Android.scss" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Arrow-Right.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\back.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Burger.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Caret.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Check.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\contacts.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Empty.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\help.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\loading.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Map.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\not-found.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Pick-photo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Pick-video.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Search.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Share.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Spinner.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Spinner.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Take-photo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Take-video.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Types.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\Video.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Icons\White-Add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Images\Logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\SampleVideo.wmv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\ContactContactTypes-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Contacts-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Contacts-Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\ContactTypes-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\ContactTypes-Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Settings-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Settings-Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\SyncTasks-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Users-Create.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Tables\Users-Data.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Videos\AboutUs.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Zebble-Meta.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="$(MSBuildThisFileDirectory)Views\.zebble-schema.xml" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Modules\Contact\ContactForm.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Modules\Contact\ContactForm.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Modules\Contact\ContactsList.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Modules\Contact\ContactsList.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Modules\ContactContactType\Types_ContactFormFormInfo.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Modules\ContactContactType\Types_ContactFormFormInfo.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Modules\Menu\MainMenu.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Modules\Menu\MainMenu.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-1.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-1.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-1\Enter.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-1\Enter.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-2.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-2.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-3.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-3.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-4.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-4.zbl" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\Page-5.cs" />
+    <None Include="$(MSBuildThisFileDirectory)Views\Pages\Page-5.zbl" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)StartUp.cs" />
+  </ItemGroup>
+</Project>

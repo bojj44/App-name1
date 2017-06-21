@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="Page3" z-base="Templates.Default" z-namespace="UI.Pages"
+    z-partial="true" Title="Page 3" data-TopMenu="MainMenu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../.zebble-schema.xml" />

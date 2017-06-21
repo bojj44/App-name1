@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="Page5" z-base="Templates.Default" z-namespace="UI.Pages"
+    z-partial="true" Title="About us" data-TopMenu="MainMenu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../.zebble-schema.xml">
+
+  <z-place inside="Body">
+
+    <TextView Text="Hello world!" />
+
+  </z-place>
+
+</z-Component>

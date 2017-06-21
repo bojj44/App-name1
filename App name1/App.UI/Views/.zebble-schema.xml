@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="z-Component">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="z-type" type="xs:Name" use="required" />
+      <xs:attribute name="z-base" type="xs:Name" use="required" />
+      <xs:attribute name="z-namespace" type="xs:Name" use="optional" />
+      <xs:attribute name="z-implements" type="xs:Name" use="optional" />
+      <xs:attribute name="z-partial" type="Boolean" />
+      <xs:attribute name="Title" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="z-place">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:any minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="inside" type="xs:Name" use="required" />
+      <xs:anyAttribute />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="BooleanEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="True" />
+      <xs:enumeration value="False" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Boolean">
+    <xs:union memberTypes="BooleanEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="StringPattern">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:element name="Modules.AboutUs">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactTypes">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactUs">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactForm">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.Contacts">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactsList">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactTypeForm">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactTypesList">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.ContactTypesEnter">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.Login">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.LoginForm">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.MainMenu">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.Settings">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.SettingsForm">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.SocialLogin">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Modules.Types_ContactFormFormInfo">
+    <xs:complexType>
+      <xs:attribute name="Id" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="LocationTrackingPurposeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AutomotiveNavigation" />
+      <xs:enumeration value="OtherNavigation" />
+      <xs:enumeration value="Fitness" />
+      <xs:enumeration value="Other" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LocationTrackingPurpose">
+    <xs:union memberTypes="LocationTrackingPurposeEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="DevicePermissionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Albums" />
+      <xs:enumeration value="Camera" />
+      <xs:enumeration value="Microphone" />
+      <xs:enumeration value="BodyMotions" />
+      <xs:enumeration value="Location" />
+      <xs:enumeration value="Contacts" />
+      <xs:enumeration value="Calendar" />
+      <xs:enumeration value="Reminders" />
+      <xs:enumeration value="PhoneCall" />
+      <xs:enumeration value="SendSms" />
+      <xs:enumeration value="Speech" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DevicePermission">
+    <xs:union memberTypes="DevicePermissionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="PermissionResultEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Granted" />
+      <xs:enumeration value="Denied" />
+      <xs:enumeration value="FeatureDisabled" />
+      <xs:enumeration value="Restricted" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PermissionResult">
+    <xs:union memberTypes="PermissionResultEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="AlignmentEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TopLeft" />
+      <xs:enumeration value="TopRight" />
+      <xs:enumeration value="TopMiddle" />
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Middle" />
+      <xs:enumeration value="BottomLeft" />
+      <xs:enumeration value="BottomRight" />
+      <xs:enumeration value="BottomMiddle" />
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Justify" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Alignment">
+    <xs:union memberTypes="AlignmentEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="RepeatDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Horizontal" />
+      <xs:enumeration value="Vertical" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="RepeatDirection">
+    <xs:union memberTypes="RepeatDirectionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="TextTransformEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="Uppercase" />
+      <xs:enumeration value="Lowercase" />
+      <xs:enumeration value="Capitalize" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextTransform">
+    <xs:union memberTypes="TextTransformEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="SwipeDirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Up" />
+      <xs:enumeration value="Down" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="SwipeDirection">
+    <xs:union memberTypes="SwipeDirectionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="TextModeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Normal" />
+      <xs:enumeration value="Password" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TextMode">
+    <xs:union memberTypes="TextModeEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="KeyboardActionTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default" />
+      <xs:enumeration value="Continue" />
+      <xs:enumeration value="Done" />
+      <xs:enumeration value="Go" />
+      <xs:enumeration value="Join" />
+      <xs:enumeration value="Next" />
+      <xs:enumeration value="Search" />
+      <xs:enumeration value="Send" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="KeyboardActionType">
+    <xs:union memberTypes="KeyboardActionTypeEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="StretchEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OriginalRatio" />
+      <xs:enumeration value="Fill" />
+      <xs:enumeration value="Fit" />
+      <xs:enumeration value="AspectFill" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Stretch">
+    <xs:union memberTypes="StretchEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="BackgroundRepeatEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="X" />
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BackgroundRepeat">
+    <xs:union memberTypes="BackgroundRepeatEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="DevicePlatformEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IOS" />
+      <xs:enumeration value="Android" />
+      <xs:enumeration value="Windows" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="DevicePlatform">
+    <xs:union memberTypes="DevicePlatformEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="ButtonLocationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ButtonLocation">
+    <xs:union memberTypes="ButtonLocationEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="PageTransitionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="SlideForward" />
+      <xs:enumeration value="SlideBack" />
+      <xs:enumeration value="Fade" />
+      <xs:enumeration value="SlideDown" />
+      <xs:enumeration value="SlideUp" />
+      <xs:enumeration value="DropDown" />
+      <xs:enumeration value="DropUp" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PageTransition">
+    <xs:union memberTypes="PageTransitionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="MediaSourceEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PickPhoto" />
+      <xs:enumeration value="TakePhoto" />
+      <xs:enumeration value="PickVideo" />
+      <xs:enumeration value="TakeVideo" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MediaSource">
+    <xs:union memberTypes="MediaSourceEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="ShareTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="Link" />
+      <xs:enumeration value="Clipboard" />
+      <xs:enumeration value="Browser" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ShareType">
+    <xs:union memberTypes="ShareTypeEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="TimeFormatEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AMPM" />
+      <xs:enumeration value="Twentyfour" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TimeFormat">
+    <xs:union memberTypes="TimeFormatEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="IconLocationEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="IconLocation">
+    <xs:union memberTypes="IconLocationEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="AnimationEasingEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EaseIn" />
+      <xs:enumeration value="EaseInOut" />
+      <xs:enumeration value="EaseOut" />
+      <xs:enumeration value="Linear" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AnimationEasing">
+    <xs:union memberTypes="AnimationEasingEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="VideoQualityEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="High" />
+      <xs:enumeration value="Medium" />
+      <xs:enumeration value="Low" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="VideoQuality">
+    <xs:union memberTypes="VideoQualityEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="CameraOptionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Rear" />
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="CameraOption">
+    <xs:union memberTypes="CameraOptionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="FieldEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="First_name" />
+      <xs:enumeration value="Last_name" />
+      <xs:enumeration value="Email" />
+      <xs:enumeration value="Birthday" />
+      <xs:enumeration value="Gender" />
+      <xs:enumeration value="Location" />
+      <xs:enumeration value="Age_range" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Field">
+    <xs:union memberTypes="FieldEnum StringPattern" />
+  </xs:simpleType>
+  <xs:simpleType name="DirectionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="Down" />
+      <xs:enumeration value="DiagonalDown" />
+      <xs:enumeration value="DiagonalUp" />
+      <xs:enumeration value="@....." />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Direction">
+    <xs:union memberTypes="DirectionEnum StringPattern" />
+  </xs:simpleType>
+  <xs:complexType name="View-AbstractType">
+    <xs:sequence>
+      <xs:any minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="PseudoCssState" type="xs:string" />
+    <xs:attribute name="CssClass" type="xs:string" />
+    <xs:attribute name="AutoFlash" type="Boolean" />
+    <xs:attribute name="Id" type="xs:string" />
+    <xs:attribute name="on-Shown" type="xs:string" />
+    <xs:attribute name="on-PreRendered" type="xs:string" />
+    <xs:attribute name="on-Initializing" type="xs:string" />
+    <xs:attribute name="on-Initialized" type="xs:string" />
+    <xs:attribute name="on-BroughtToFront" type="xs:string" />
+    <xs:attribute name="on-SentToBack" type="xs:string" />
+    <xs:attribute name="on-Flashed" type="xs:string" />
+    <xs:attribute name="on-Tapped" type="xs:string" />
+    <xs:attribute name="on-LongPressed" type="xs:string" />
+    <xs:attribute name="on-Swiped" type="xs:string" />
+    <xs:attribute name="on-Panning" type="xs:string" />
+    <xs:attribute name="on-PanFinished" type="xs:string" />
+    <xs:attribute name="Style.Margin.Left" type="xs:string" />
+    <xs:attribute name="Style.Margin.Top" type="xs:string" />
+    <xs:attribute name="Style.Margin.Bottom" type="xs:string" />
+    <xs:attribute name="Style.Padding.Left" type="xs:string" />
+    <xs:attribute name="Style.Padding.Top" type="xs:string" />
+    <xs:attribute name="Style.Padding.Bottom" type="xs:string" />
+    <xs:attribute name="Style.Border.Left" type="xs:string" />
+    <xs:attribute name="Style.Border.Top" type="xs:string" />
+    <xs:attribute name="Style.Border.Bottom" type="xs:string" />
+    <xs:attribute name="Style.Border.Width" type="xs:string" />
+    <xs:attribute name="Style.Border.Color" type="xs:string" />
+    <xs:attribute name="Style.Border.Radius" type="xs:string" />
+    <xs:attribute name="Style.Margin" type="xs:string" />
+    <xs:attribute name="Style.Padding" type="xs:string" />
+    <xs:attribute name="Style.Border" type="xs:string" />
+    <xs:attribute name="Style.BackgroundImage.Alignment" type="xs:string" />
+    <xs:attribute name="Style.BackgroundImage.Stretch" type="xs:string" />
+    <xs:attribute name="Style.BackgroundImage.Path" type="xs:string" />
+    <xs:attribute name="Style.X" type="xs:string" />
+    <xs:attribute name="Style.Y" type="xs:string" />
+    <xs:attribute name="Style.Width" type="xs:string" />
+    <xs:attribute name="Style.Height" type="xs:string" />
+    <xs:attribute name="Style.Opacity" type="xs:string" />
+    <xs:attribute name="Style.Absolute" type="Boolean" />
+    <xs:attribute name="Style.Ignored" type="Boolean" />
+    <xs:attribute name="Style.Visible" type="Boolean" />
+    <xs:attribute name="Style.ZIndex" type="xs:string" />
+    <xs:attribute name="Style.BackgroundColor" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="CameraViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CameraView" nillable="true" type="CameraViewType" />
+  <xs:complexType name="VirtualRealityType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="EnableGyroscope" type="Boolean" />
+        <xs:attribute name="GlassesMode" type="Boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VirtualReality" nillable="true" type="VirtualRealityType" />
+  <xs:complexType name="ImageViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Path" type="xs:string" />
+        <xs:attribute name="ImageData" type="xs:string" />
+        <xs:attribute name="Alignment" type="Alignment" />
+        <xs:attribute name="Stretch" type="Stretch" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ImageView" nillable="true" type="ImageViewType" />
+  <xs:complexType name="SliderType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="IsRange" type="Boolean" />
+        <xs:attribute name="Value" type="xs:string" />
+        <xs:attribute name="LowValue" type="xs:string" />
+        <xs:attribute name="UpValue" type="xs:string" />
+        <xs:attribute name="MinValue" type="xs:string" />
+        <xs:attribute name="MaxValue" type="xs:string" />
+        <xs:attribute name="Step" type="xs:string" />
+        <xs:attribute name="on-ValueChanged" type="xs:string" />
+        <xs:attribute name="on-LowValueChanged" type="xs:string" />
+        <xs:attribute name="on-UpValueChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Slider" nillable="true" type="SliderType" />
+  <xs:complexType name="SwitchType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Checked" type="Boolean" />
+        <xs:attribute name="AnimationDuration" type="xs:string" />
+        <xs:attribute name="on-CheckedChanged" type="xs:string" />
+        <xs:attribute name="Alignment" type="Alignment" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Switch" nillable="true" type="SwitchType" />
+  <xs:complexType name="CanvasType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Canvas" nillable="true" type="CanvasType" />
+  <xs:complexType name="RotatorType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="z-of" type="xs:string" />
+        <xs:attribute name="ItemsToDisplay" type="xs:string" />
+        <xs:attribute name="on-SelectionChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Rotator" nillable="true" type="RotatorType" />
+  <xs:complexType name="ScrollViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="EnableZooming" type="Boolean" />
+        <xs:attribute name="MinZoomScale" type="xs:string" />
+        <xs:attribute name="MaxZoomScale" type="xs:string" />
+        <xs:attribute name="EnableScrolling" type="Boolean" />
+        <xs:attribute name="PartialPagingSize" type="xs:string" />
+        <xs:attribute name="ScrollX" type="xs:string" />
+        <xs:attribute name="ScrollY" type="xs:string" />
+        <xs:attribute name="ShowScroll" type="Boolean" />
+        <xs:attribute name="ShowVerticalScrollBars" type="Boolean" />
+        <xs:attribute name="ShowHorizontalScrollBars" type="Boolean" />
+        <xs:attribute name="PagingEnabled" type="Boolean" />
+        <xs:attribute name="PartialPagingEnabled" type="Boolean" />
+        <xs:attribute name="OnePagePartialPagingEnabled" type="Boolean" />
+        <xs:attribute name="Direction" type="RepeatDirection" />
+        <xs:attribute name="on-ScrollEnded" type="xs:string" />
+        <xs:attribute name="on-UserScrolledHorizontally" type="xs:string" />
+        <xs:attribute name="on-UserScrolledVertically" type="xs:string" />
+        <xs:attribute name="on-EnableScrollingChanged" type="xs:string" />
+        <xs:attribute name="on-ContentSizeChanged" type="xs:string" />
+        <xs:attribute name="on-ScrolledToNewPage" type="xs:string" />
+        <xs:attribute name="on-RefreshScrollContentSize" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ScrollView" nillable="true" type="ScrollViewType" />
+  <xs:complexType name="TextControl-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Text" type="xs:string" />
+        <xs:attribute name="TextAlignment" type="Alignment" />
+        <xs:attribute name="Style.TextColor" type="xs:string" />
+        <xs:attribute name="Style.WrapText" type="Boolean" />
+        <xs:attribute name="Style.TextTransform" type="xs:string" />
+        <xs:attribute name="Style.TextAlignment" type="xs:string" />
+        <xs:attribute name="Style.Font" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="MapType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Zoom" type="xs:string" />
+        <xs:attribute name="ZoomEnable" type="Boolean" />
+        <xs:attribute name="ScrollEnabled" type="Boolean" />
+        <xs:attribute name="ShowsUserLocation" type="Boolean" />
+        <xs:attribute name="on-UserChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Map" nillable="true" type="MapType" />
+  <xs:complexType name="NativeViewWrapperType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NativeViewWrapper" nillable="true" type="NativeViewWrapperType" />
+  <xs:complexType name="VideoPlayerType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Path" type="xs:string" />
+        <xs:attribute name="AutoPlay" type="Boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VideoPlayer" nillable="true" type="VideoPlayerType" />
+  <xs:complexType name="WebViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Html" type="xs:string" />
+        <xs:attribute name="Url" type="xs:string" />
+        <xs:attribute name="on-BrowserNavigated" type="xs:string" />
+        <xs:attribute name="on-LoadingError" type="xs:string" />
+        <xs:attribute name="on-LoadFinished" type="xs:string" />
+        <xs:attribute name="on-SourceChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="WebView" nillable="true" type="WebViewType" />
+  <xs:complexType name="IndicatorType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View-AbstractType">
+        <xs:attribute name="Block" type="Boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Indicator" nillable="true" type="IndicatorType" />
+  <xs:complexType name="DrawingType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="on-LineAdded" type="xs:string" />
+        <xs:attribute name="on-PolygonAdded" type="xs:string" />
+        <xs:attribute name="on-Cleared" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Drawing" nillable="true" type="DrawingType" />
+  <xs:complexType name="AugmentedRealityType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="AugmentedReality" nillable="true" type="AugmentedRealityType" />
+  <xs:complexType name="CheckBoxType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="Alignment" type="Alignment" />
+        <xs:attribute name="Checked" type="Boolean" />
+        <xs:attribute name="on-CheckedChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CheckBox" nillable="true" type="CheckBoxType" />
+  <xs:complexType name="IconButtonType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="IconPath" type="xs:string" />
+        <xs:attribute name="Text" type="xs:string" />
+        <xs:attribute name="IconLocation" type="IconLocation" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="IconButton" nillable="true" type="IconButtonType" />
+  <xs:complexType name="OptionsListType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="Value" type="xs:string" />
+        <xs:attribute name="DataSource" type="xs:string" />
+        <xs:attribute name="MultiSelect" type="Boolean" />
+        <xs:attribute name="Direction" type="RepeatDirection" />
+        <xs:attribute name="on-SelectedItemChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="OptionsList" nillable="true" type="OptionsListType" />
+  <xs:complexType name="SearchInputType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="Text" type="xs:string" />
+        <xs:attribute name="on-Searched" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SearchInput" nillable="true" type="SearchInputType" />
+  <xs:complexType name="ListViewItemType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="SwipeAnimationDuration" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListViewItem" nillable="true" type="ListViewItemType" />
+  <xs:complexType name="StackType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="IsRightToLeft" type="Boolean" />
+        <xs:attribute name="Direction" type="RepeatDirection" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Stack" nillable="true" type="StackType" />
+  <xs:complexType name="NavigationBarType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NavigationBar" nillable="true" type="NavigationBarType" />
+  <xs:complexType name="Page-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="CanvasType">
+        <xs:attribute name="NavParams" type="xs:string" />
+        <xs:attribute name="Transition" type="PageTransition" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TextViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="TextControl-AbstractType">
+        <xs:attribute name="Text" type="xs:string" />
+        <xs:attribute name="Wrap" type="Boolean" />
+        <xs:attribute name="AutoSizeWidth" type="Boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextView" nillable="true" type="TextViewType" />
+  <xs:complexType name="TextInputType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="TextControl-AbstractType">
+        <xs:attribute name="TextMode" type="TextMode" />
+        <xs:attribute name="KeyboardActionType" type="KeyboardActionType" />
+        <xs:attribute name="IsFocused" type="Boolean" />
+        <xs:attribute name="Text" type="xs:string" />
+        <xs:attribute name="Placeholder" type="xs:string" />
+        <xs:attribute name="Lines" type="xs:string" />
+        <xs:attribute name="on-UserFocusChanged" type="xs:string" />
+        <xs:attribute name="on-UserTextChanged" type="xs:string" />
+        <xs:attribute name="on-UserTextChangeFinished" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TextInput" nillable="true" type="TextInputType" />
+  <xs:complexType name="CarouselType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Carousel" nillable="true" type="CarouselType" />
+  <xs:complexType name="SignaturePadType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="DrawingType">
+        <xs:attribute name="LineThickness" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SignaturePad" nillable="true" type="SignaturePadType" />
+  <xs:complexType name="ButtonType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="TextViewType">
+        <xs:attribute name="ImagePath" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Button" nillable="true" type="ButtonType" />
+  <xs:complexType name="FilePickerType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="VideoQuality" type="VideoQuality" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FilePicker" nillable="true" type="FilePickerType" />
+  <xs:complexType name="FormField-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="Mandatory" type="Boolean" />
+        <xs:attribute name="LabelText" type="xs:string" />
+        <xs:attribute name="IconPath" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GridType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="Columns" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Grid" nillable="true" type="GridType" />
+  <xs:complexType name="LazyLoaderType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LazyLoader" nillable="true" type="LazyLoaderType" />
+  <xs:complexType name="ListView-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="ShouldLazyLoad" type="Boolean" />
+        <xs:attribute name="EmptyText" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="NavBarPage-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Page-AbstractType">
+        <xs:attribute name="Title" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TabsType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tabs" nillable="true" type="TabsType" />
+  <xs:complexType name="TreeViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="IndentSpace" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TreeView" nillable="true" type="TreeViewType" />
+  <xs:complexType name="Picker-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="StackType">
+        <xs:attribute name="Placeholder" type="xs:string" />
+        <xs:attribute name="AllowNull" type="Boolean" />
+        <xs:attribute name="SelectedText" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!--<xs:complexType name="TabType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="TabType">
+        <xs:attribute name="z-of" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tab" nillable="true" type="TabType" />
+  <xs:complexType name="PopUpType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="PopUp-AbstractType">
+        <xs:attribute name="z-of" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PopUp" nillable="true" type="PopUpType" />-->
+  <xs:complexType name="FormFieldType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FormField-AbstractType">
+        <xs:attribute name="z-of" type="xs:string" />
+        <xs:attribute name="Placeholder" type="xs:string" />
+        <xs:attribute name="Value" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FormField" nillable="true" type="FormFieldType" />
+  <xs:complexType name="ListViewType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ListView-AbstractType">
+        <xs:attribute name="z-of" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ListView" nillable="true" type="ListViewType" />
+  <xs:complexType name="NavBarTabsPage-AbstractType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="NavBarPage-AbstractType">
+        <xs:attribute name="z-of" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DatePickerType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Picker-AbstractType">
+        <xs:attribute name="SelectedValue" type="xs:string" />
+        <xs:attribute name="TextFormat" type="xs:string" />
+        <xs:attribute name="DayFormat" type="xs:string" />
+        <xs:attribute name="MonthFormat" type="xs:string" />
+        <xs:attribute name="YearFrom" type="xs:string" />
+        <xs:attribute name="YearTo" type="xs:string" />
+        <xs:attribute name="on-SelectedValueChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DatePicker" nillable="true" type="DatePickerType" />
+  <xs:complexType name="ItemPickerType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Picker-AbstractType">
+        <xs:attribute name="Searchable" type="Boolean" />
+        <xs:attribute name="DataSource" type="xs:string" />
+        <xs:attribute name="MultiSelect" type="Boolean" />
+        <xs:attribute name="on-SelectionChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemPicker" nillable="true" type="ItemPickerType" />
+  <xs:complexType name="TimePickerType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="Picker-AbstractType">
+        <xs:attribute name="TextFormat" type="xs:string" />
+        <xs:attribute name="SelectedValue" type="xs:string" />
+        <xs:attribute name="MinuteInterval" type="xs:string" />
+        <xs:attribute name="TimeFormat" type="TimeFormat" />
+        <xs:attribute name="on-SelectedValueChanged" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TimePicker" nillable="true" type="TimePickerType" />
+</xs:schema>

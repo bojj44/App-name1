@@ -1,0 +1,191 @@
+﻿/* ----------------------------------------------------
+/* NOTE: These styles will be applied to all platforms
+/* ----------------------------------------------------*/
+
+@import "_Settings";
+
+/*General components -----------------*/
+TextView { color: $text-color; }
+
+Button { opacity: 1;
+    &:disabled { opacity: 0.3; }
+}
+
+ImageView { opacity: 1;
+    &:disabled { opacity: 0.3; }
+}
+
+IconButton { opacity: 1;
+    &:disabled { opacity: 0.3; }
+    #TextView { color: white; }
+    #Icon { }
+}
+
+PopUp { margin-top: calc("(Zebble.Device.Screen.Height - view.ActualHeight) / 2");
+    #HeaderTitle, #Title { font-size: 20px; }
+}
+
+Waiting-Indicator { margin-top: calc("(Zebble.Device.Screen.Height - view.ActualHeight) / 2");
+    #Image { background: url(Images/icons/Spinner.gif); }
+}
+
+/*Dialogs ----------------*/
+Prompt {
+    #Description { }
+    #Input { }
+}
+
+AlertDialog {
+    #Message { }
+}
+
+Dialog {
+    #Title { color: $primary-color; font-size: 20px; }
+    #ButtonsRow {
+        Button { color: $primary-color;
+            &.primary-button { color: white; }
+        }
+    }
+}
+
+Toast { background: white; padding: 20px; background: black;
+    #Label { color: white; }
+    #OKButton { color: $primary-color; }
+}
+
+/*Form -------------------*/
+FormField {
+    #Label { }
+    #HelpIcon { }
+    #Icon { }
+}
+
+TextInput { padding: 7px; }
+
+Switch {
+    #Bar { background: $grey; }
+    &:checked #Bar { background: $primary-color; }
+    #Toggle { }
+}
+
+OptionsList {
+    &:vertical {
+        OptionsList-Option { margin-top: 6px; }
+    }
+    OptionsList-Option { 
+        #Label { color: $text-color; }
+        &:checked #Label { color: $primary-color; }
+    }
+}
+
+Picker { padding: $input-padding; border-color: $very-light-grey;
+    #Caret { background: url(Images/Icons/Caret.png); }
+    #PlaceholderLabel { }
+}
+
+FilePicker {
+    #Button { }
+    #Preview { }
+}
+
+FilePicker-Dialog {
+    IconButton {
+        @extend .primary-button;
+    }
+    #PickPhotoButton #Icon { background: url(Images/Icons/Pick-photo.png); }
+    #PickVideoButton #Icon { background: url(Images/Icons/Pick-video.png); }
+    #TakePhotoButton #Icon { background: url(Images/Icons/Take-photo.png); }
+    #TakeVideoButton #Icon { background: url(Images/Icons/Take-video.png); }
+}
+
+DatePicker-Cell, TimePicker-Cell {
+    #Label { color: $grey; }
+    &:active #Label { color: $text-color; }
+}
+
+DatePicker-Dialog, TimePicker-Dialog {
+    #RotatorsRow { }
+}
+
+Slider {
+    #RangeBar { background: $grey; }
+    #SelectedBar, #Handle, #UpHandle { background: $primary-color; }
+    #Caption, #UpCaption { }
+}
+/*Navigation bar ----------------------------- */
+.navbar-background { background: linear-gradient(to bottom, $primary-color, #196e6d); }
+NavigationBar {
+    IconButton { margin: 0; padding: 0 }
+    Button { padding: 0; }
+    #Title { color: white; }
+    .navbar-button { width: 42px; height: 100%; color: white; }
+    .back { color: white;
+        #Icon { background: url(Images/Icons/Back.png); margin: 0; width: 48px; padding: 10px 5px; height: 100%; }
+    }
+    .menu-icon { background: url(Images/Icons/Burger.png); margin: 0; height: 45px; }
+}
+
+Modal { background: white; padding: 20px; height: auto; }
+
+MenuDisplayer { position: absolute; width: 100%; height: 100%; MenuWidth: 250px;
+    #Overlay { width: 100%; height: 100%; opacity: 0.35; background: black; }
+}
+
+/*Tabs --------------------- */
+Tabs {
+    Tabs-Tab { background-color: transparent;
+        &:active { background-color: $primary-color; }
+        #Label { color: #eeeeee; padding-top: 5px; }
+        #Icon { }
+    }
+}
+
+/*list views ----------------*/
+ListView {
+    #EmptyTextLabel { color: $grey; }
+    .view-row { width: 20px; height: 100%; }
+
+    ListViewItem { border-color: $very-light-grey;
+        .title { font-weight: bold; margin-bottom: 10px; }
+    }
+
+    #SlideIn TextView { height: 100%; margin: 0; color: white; background: #444; padding: 10px; AutoSizeWidth: calc("true");
+        &.delete-button { background: #ff4c32; }
+    }
+}
+
+.standard-list {
+    ListViewItem { padding: 10px;
+        .icon { width: 60px; }
+    }
+
+    ListView:lazy-loaded ListViewItem { height: 60px; }
+}
+
+SearchInput { margin-bottom: 5px;
+    #TextBox { text-align: center; }
+    &:focus #TextBox { text-align: left; }
+    #Icon { }
+    #CancelButton { }
+}
+
+/*App components -----------------*/
+.module-header-title { color: $primary-color; margin-bottom: 20px; }
+.list-view .module-header-title { padding: 5px; padding-right: 20px; height: 40px; }
+.header-intro { color: #888888; margin-bottom: 20px; }
+.primary-button { color: white; background: $primary-color; }
+.bottom-buttons-row { margin-top: 5px; margin-bottom: 5px; }
+.form-field-header { padding: $input-padding; font-weight: bold; font-size: 16px; }
+
+/*main menu --------------------*/
+MainMenu { background: #282828;
+    Button { color: white; height: 50px; }
+    #LogoImage { height: 90px; width: 100%; margin-bottom: 10px; margin-top: 10px; }
+    IconButton { height: 50px; border-bottom-width: 1px; border-color: $dark-grey; color: white;
+        #Icon { background-size: contain; margin-top: 7px; height: 25px; width: 30px; margin-left: 10px; }
+    }
+}
+
+Carousel-Bullet { background: #C8C8C8;
+    &:active { background: #505050; }
+}

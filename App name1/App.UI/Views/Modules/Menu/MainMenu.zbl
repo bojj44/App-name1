@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="MainMenu" z-base="Canvas" z-namespace="UI.Modules"
+    z-partial="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../../.zebble-schema.xml">
+
+  <Stack Id="Body">
+
+    <Stack Id="ButtonsContainer" Direction="Horizontal" CssClass="top-buttons-row">
+
+      <ImageView Id="LogoImage" Path="/Images/Logo.png" />
+
+    </Stack>
+
+    <Stack Id="Items">
+
+      <IconButton Id="Page1" Text="Page 1" IconPath="Images/Icons/contacts.png"
+          on-Tapped="@Page1Tapped" />
+
+      <IconButton Id="Page2" Text="Page 2" IconPath="Images/Icons/Types.png"
+          on-Tapped="@Page2Tapped" />
+
+      <IconButton Id="Page3" Text="Page 3" IconPath="Images/Icons/Settings.png"
+          on-Tapped="@Page3Tapped" />
+
+      <IconButton Id="Contact" Text="Page 4" IconPath="Images/Icons/Map.png"
+          on-Tapped="@ContactTapped" />
+
+    </Stack>
+
+  </Stack>
+
+</z-Component>

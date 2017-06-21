@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="ContactsList" z-base="Stack" z-namespace="UI.Modules"
+    z-partial="true" CssClass="standard-list" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../../.zebble-schema.xml">
+
+  <ImageView Id="AddButton" CssClass="navbar-button" Path="Images/Icons/White-Add.png"
+      z-nav-forward="Pages.Page1Enter" z-navBar="right" />
+
+  <TextView Id="HeaderTitle" Text="Contacts" CssClass="module-header-title" />
+
+  <TextView Id="HeaderIntro" Text="This module allows you to see all your contacts, interact with them and generally have a lot of fun with it. Am I long enough now?" CssClass="header-intro" />
+
+  <Stack Id="ButtonsContainer" Direction="Horizontal" CssClass="top-buttons-row">
+
+    <Button Id="ReloadButton" Text="Reload" on-Tapped="@ReloadButtonTapped" />
+
+  </Stack>
+
+  <ListView z-of="Contact, Row" LazyLoad="true" DataSource="Items," Id="List" EmptyText="Empty list">
+
+    <z-Component z-type="Row" z-partial="true" z-base="ListViewItem[Contact]" AutoFlash="true" on-Tapped="ViewButtonTapped">
+
+      <ImageView Id="PhotoImage" CssClass="icon" Path="@Item.Photo.Path"
+          Style.Visible="@(Module.ShowPhotoColumn &amp;&amp; Item.Photo.HasValue())" Style.Ignored="@!(Module.ShowPhotoColumn)" />
+
+      <Stack Id="NameColumn">
+        <TextView Id="Name" CssClass="title" Text="@Item.Name" />
+        <TextView Id="ContactDetails" Text="@(new[]{Item.Email , Item.Tel}.Trim().ToString(&quot;, &quot;))" />
+      </Stack>
+
+      <ImageView Id="ViewButton" CssClass="view-row" Path="Images/Icons/Arrow-Right.png"
+          on-Tapped="@ViewButtonTapped" AutoFlash="true" />
+
+      <z-place inside="SlideIn">
+        <Button Id="DeleteButton" Text="Delete" CssClass="delete-button"
+            on-Tapped="@DeleteButtonTapped" />
+      </z-place>
+
+    </z-Component>
+
+  </ListView>
+
+</z-Component>

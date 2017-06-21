@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="Page1Enter" z-base="Templates.Default" z-namespace="UI.Pages"
+    z-partial="true" Title="Contact details" data-TopMenu="MainMenu"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./../../.zebble-schema.xml">
+
+  <z-place inside="Body">
+
+    <LazyLoader Id="ContactFormLoader">
+
+      <Modules.ContactForm Id="ContactForm" />
+
+    </LazyLoader>
+
+  </z-place>
+
+</z-Component>

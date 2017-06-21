@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>38e83e4d-f88c-40c0-9528-9c818b0eaf42</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Domain</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\Api.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\AnonymousUser.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Contact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ContactContactType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\ContactType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entities\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\@AdoDotNetDataProviderFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\ContactContactTypeDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\ContactDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\ContactTypeDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\SettingsDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DAL\UserDataProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)-Logic\Contact.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)-Logic\Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)-Logic\User.cs" />
+  </ItemGroup>
+</Project>

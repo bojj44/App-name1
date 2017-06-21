@@ -1,0 +1,7 @@
+﻿/* ------------------------------------------------------------
+/* NOTE: These styles will be applied to the UWP platform only 
+/* ------------------------------------------------------------*/
+.windows-only TextView, .windows-only TextInput { font-family: "Segoe UI"; }
+
+.windows-only .module-header-title { font-size: 40px; }
+

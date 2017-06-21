@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<z-Component z-type="ContactForm" z-base="Stack" z-namespace="UI.Modules"
+    z-partial="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="./../../.zebble-schema.xml">
+
+  <Button Id="SaveButton" Text="Save" CssClass="navbar-button" on-Tapped="@SaveButtonTapped"
+      z-navBar="right" />
+
+  <TextView Id="HeaderTitle" Text="Contact Details" CssClass="module-header-title" />
+
+  <FormField z-of="TextInput" Id="Name" LabelText="Name" Mandatory="true" />
+
+  <FormField z-of="TextInput" Id="Email" LabelText="Email" />
+
+  <FormField z-of="Slider" Id="Number" LabelText="Number" Mandatory="true"
+      Control.MinValue="@0" Control.MaxValue="@20" />
+
+  <FormField z-of="TextInput" Id="Tel" LabelText="Tel" />
+
+  <FormField z-of="TextInput" Id="Notes" LabelText="Notes" Control.Lines="@5" />
+
+  <FormField z-of="DatePicker" Id="DateOfBirth" LabelText="Date of birth"
+      Control.AllowNull="true" />
+
+  <FormField z-of="TimePicker" Id="TimeOfBirth" LabelText="Time of birth"
+      Control.AllowNull="true" />
+
+  <FormField z-of="ItemPicker" Id="Type" LabelText="Type" Control.AllowNull="true"
+      Control.DataSource="@(Database.GetList&lt;ContactType&gt;())" />
+
+  <FormField z-of="ItemPicker" Id="Types" LabelText="Types" Control.MultiSelect="true"
+      Control.DataSource="@(Database.GetList&lt;ContactType&gt;())" />
+
+  <FormField z-of="FilePicker" Id="Photo" LabelText="Photo" />
+
+  <FormField z-of="Switch" Id="IsNice" LabelText="Is nice" />
+
+</z-Component>

@@ -1,0 +1,44 @@
+﻿/* ----------------------------------------------------------------
+/* NOTE: These styles will be applied to the ANDROID platform only 
+/* ----------------------------------------------------------------*/
+.android-only TextInput, .android-only TextView { font-family: Roboto; }
+
+.android-only Button, .android-only IconButton { text-transform: uppercase; height: 36px; border-radius: 4px; }
+
+    .android-only IconButton #TextView { text-transform: uppercase; }
+
+.android-only PopUp Dialog, .android-only PopUp Page { border-radius: 4px; }
+
+.android-only .module-header-title { font-size: 24px; }
+
+.android-only NavigationBar #Title { text-align: left; padding-left: 65px; font-size: 20px; font-weight: normal; }
+
+.android-only TextInput { font-family: Roboto; border: 0 #e6e6e6; border-bottom-width: 1px; padding: 2px; margin-bottom: 10px; }
+
+.android-only ListView { padding-top: 8px; }
+
+    .android-only ListView ListViewItem { height: 72px; padding-left: 10px; padding-right: 10px; }
+
+        .android-only ListView ListViewItem ImageView.view-row { display: none; }
+
+.android-only Tabs { height: auto; }
+
+    .android-only Tabs Tabs-Tab { border: 0 #43aaa9; font-size: 14px; margin-bottom: 1px; height: 40px; }
+
+        .android-only Tabs Tabs-Tab:active { background-color: transparent; border-bottom-width: 2px; }
+
+        .android-only Tabs Tabs-Tab #Label { text-transform: uppercase; height: 100%; vertical-align: middle; }
+
+        .android-only Tabs Tabs-Tab #Icon { display: none; }
+
+.android-only Slider #Handle { width: 15px; height: 15px; }
+
+.android-only Switch { width: 50px; }
+
+    .android-only Switch #Bar { background: #C8C8C8; height: 14px; border-radius: 7px; margin-top: 6px; opacity: 1; }
+
+    .android-only Switch #Toggle { background: white; border-width: 1px; border-color: #C8C8C8; margin: 0; }
+
+    .android-only Switch:checked #Toggle { background: #43aaa9; border-color: transparent; }
+
+    .android-only Switch:checked #Bar { opacity: 0.35; background: #43aaa9; }
