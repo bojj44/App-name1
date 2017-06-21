@@ -14,7 +14,7 @@ DO THIS NOW!
 5. Run the UWP project to ensure everything is ready.
 
 
-
+  
 *************************************************
 * PREPARE YOUR VISUAL STUDIO « Once is enough » *
 *************************************************
